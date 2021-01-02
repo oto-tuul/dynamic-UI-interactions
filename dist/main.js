@@ -1,0 +1,1 @@
+(()=>{console.log("TEST");let e=document.createElement("p");e.innerHTML="TEST",document.getElementById("content").appendChild(e)})();
