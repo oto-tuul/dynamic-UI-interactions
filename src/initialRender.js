@@ -1,7 +1,9 @@
-import initListeners from './listeners';
+import { initListeners } from './listeners';
 import forest from './img/forest.jpg';
+import forestRoad from './img/forestRoad.jpg';
 import mountain from './img/mountain.jpg';
 import rice from './img/rice.jpg';
+import town from './img/town.jpg';
 
 const init = function initialRender() {
   const content = document.getElementById('content');
@@ -94,9 +96,8 @@ const init = function initialRender() {
 
   const img1 = document.createElement('img');
   img1.classList.add('slideImage');
-
   img1.id = 'firstImg';
-  img1.style.zIndex = 0;
+  img1.style.zIndex = 1;
   img1.src = forest;
   slideContent.appendChild(img1);
 
@@ -104,16 +105,29 @@ const init = function initialRender() {
   img2.classList.add('slideImage');
   img2.id = 'secondImg';
   img2.style.zIndex = 0;
-  img2.src = mountain;
+  img2.src = forestRoad;
   slideContent.appendChild(img2);
 
   const img3 = document.createElement('img');
   img3.classList.add('slideImage');
-  img3.classList.add('active');
   img3.id = 'thirdImg';
-  img3.style.zIndex = 1;
-  img3.src = rice;
+  img3.style.zIndex = 0;
+  img3.src = town;
   slideContent.appendChild(img3);
+
+  const img4 = document.createElement('img');
+  img4.classList.add('slideImage');
+  img4.id = 'fourthImg';
+  img4.style.zIndex = 0;
+  img4.src = rice;
+  slideContent.appendChild(img4);
+
+  const img5 = document.createElement('img');
+  img5.classList.add('slideImage');
+  img5.id = 'fourthImg';
+  img5.style.zIndex = 0;
+  img5.src = mountain;
+  slideContent.appendChild(img5);
 
   const dotContainer = document.createElement('div');
   dotContainer.id = 'dotContainer';
@@ -126,7 +140,7 @@ const init = function initialRender() {
     dot.id = `${i}`;
     dotContainer.appendChild(dot);
   }
-  document.getElementById('2').classList.add('selected');
+  document.getElementById(`0`).classList.add('selected');
 
   initListeners('Content');
 };

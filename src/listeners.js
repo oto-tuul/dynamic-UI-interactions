@@ -25,6 +25,7 @@ const initListeners = function addAllInitialListeners(id) {
   const addNextBtnListener = function () {
     const nextBtn = document.getElementById('nextBtn');
     nextBtn.addEventListener('click', () => {
+      auto = 0;
       displayImg(1, 'active');
     });
   };
@@ -50,4 +51,4 @@ const initListeners = function addAllInitialListeners(id) {
   addDotListeners();
 };
 
-export default initListeners;
+export { initListeners };

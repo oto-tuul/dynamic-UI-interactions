@@ -1,4 +1,4 @@
-let i = 2;
+let i = 0;
 // const slideContent = document.getElementById('slideContent');
 // const images = slideContent.children;
 // let length = images.length;
@@ -158,15 +158,14 @@ const displaySelectImg = function displaySelectedImage(n) {
   }
   i = n;
 
+  setTimeout(() => {
+    slideContent.style.width = images[i].width + 'px';
+  }, 500);
+
   for (let i = 0; i < dots.length; i++) {
     dots[i].classList.remove('selected');
   }
   dots[n].classList.toggle('selected');
 };
 
-const displayImgAuto = function displayImgAuto() {
-  displayImg(1, 'active');
-  setTimeout(displayImgAuto, 5000);
-};
-
-export { displayImg, displaySelectImg, displayImgAuto };
+export { displayImg, displaySelectImg };
